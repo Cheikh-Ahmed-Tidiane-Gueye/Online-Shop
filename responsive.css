@@ -1,0 +1,8 @@
+@media only screen and (max-width: 991px) {
+    .navbar-nav .dropdown, .btn{
+        border-radius: 0px;
+    }
+    .navbar-nav .btn{
+        width: 100%;
+    }
+  }
