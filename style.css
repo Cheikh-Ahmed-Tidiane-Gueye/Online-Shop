@@ -212,3 +212,14 @@ img[alt="gif"]{
     color: black;
     background-color: white;
 }
+/* .scroll .fa-bars{
+    color:white;
+} */
+.fas img{
+    width: 30px;
+    height: 30px;
+}
+
+.nav-links:checked .offcanvas{
+    display: none;
+}

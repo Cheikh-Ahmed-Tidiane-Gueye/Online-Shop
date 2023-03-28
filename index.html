@@ -31,58 +31,49 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body class="">
 
   <!-- Navbar -->  
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top scroll">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top scroll" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
         <img src="images/logo.jpg" alt="LogoA" class="rounded-circle img-fluid m-0 p-0" />
         <span class="h6 mt-auto mb-auto ms-md-2">Online Shop</span>     
       </a>
-      <!-- search -->
-      <!-- <div class="input-group mb-3 mb-lg-0 mx-lg-5 d-lg-none d-sm-flex">
-        <input type="text" class="form-control" placeholder="Rechercher" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-      </div> -->
-      <!--  -->
-      <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        <i class="fas fa-bars"></i>
+
+      <!-- toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas"><img src="images/menu.gif" class="img-fluid" alt=""></i>
       </button>
-      <!-- Offcanvas -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <!-- Left links -->
+
+      <!-- links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          <a href="#section1">
+            <a href="#section1">
+              <div class="dropdown mx-1">
+                <a class="main-btn btn nav-links" href="#section1">Accueils</a>
+              </div>
+            </a>
+  
             <div class="dropdown mx-1">
-              <a class="main-btn btn" href="#section1">Accueils</a>
+              <a class="btn dropdown-toggle" href="#Produit" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produits</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item btn text-dark nav-links" href="#Types">Types de produit</a></li>
+                  <li><a class="dropdown-item btn text-dark nav-links" href="#plus">Produits les plus acheter</a></li>
+                </ul>
             </div>
-          </a>
-
-          <div class="dropdown mx-1">
-            <a class="btn dropdown-toggle" href="#Produit" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produits</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item btn text-dark" href="#Types">Types de produit</a></li>
-                <li><a class="dropdown-item btn text-dark" href="#plus">Produits les plus acheter</a></li>
-              </ul>
-          </div>
-
-          <div class="dropdown mx-1">
-            <a class="main-btn btn" href="#contact">Contact </a>
-          </div>
-        </ul>
-        <!-- search -->
-        <div class="d-md-flex search">
-          <div class="input-group mb-3 mb-lg-0 mx-lg-3 mx-0">
-            <input type="text" class="form-control" placeholder="Rechercher" aria-label="Recipient's username" aria-describedby="button-addon2">
+  
+            <div class="dropdown mx-1">
+              <a class="main-btn btn nav-links" href="#contact">Contact </a>
+            </div>
+          </ul>
+          <!-- search -->
+          <div class="d-md-flex search">
+            <div class="input-group mb-3 mb-lg-0 mx-lg-3 mx-0">
+              <input type="text" class="form-control" placeholder="Rechercher" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
           </div>
           </div>
@@ -96,11 +87,7 @@
           <a class="shop btn btn-dark px-2" data-bs-toggle="modal" data-bs-target="#myModal-h" href="#" role="button">
             <img src="images/panier.gif" class="img-fluid rounded-circle pt-auto pb-auto">
           </a>
-        </div>
-        <!-- Fin search -->
-        </div>
       </div>
-      <!--  -->
     </div>
   </nav>
   <!-- Fin Navbar -->
@@ -111,7 +98,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
           <img src="images/close.gif" alt="close" class="img-fluid type="button" class="btn btn-secondary" data-bs-dismiss="modal"">
         </div>
         <div class="modal-body">
@@ -197,10 +184,10 @@
   <!-- Fin modal -->
 
   <!-- Sectrion 1 -->
-  <section id="section1" class="">
+  <section id="section1" class="" >
     <div class="container">
       <div class="row1 row">
-        <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-md-12 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-duration="1500">
           <h1 class="display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
            Bienvenue chez <br/>
           </h1>
@@ -548,80 +535,103 @@
     </div> 
   <!-- Fin section 3 -->
 
-  <!-- Section 4 -->
-  <div class="container-fluid">
-  <div data-draggable="true" style="position: relative;">
-    <!---->
-    <!---->
-    <section draggable="false" class="container pt-5" data-v-271253ee="">
-      <section class="mb-10 text-center"> 
-        <div class="row d-flex justify-content-center"> 
-        <div class="col-md-10 col-xl-8"> 
-          <h2 class="fw-bold mb-5">Temoignages</h2> 
-        </div> </div> <div class="row"> 
-          <div class="col-md-4 mb-5 mb-md-0"> 
-            <div class="d-flex justify-content-center mb-4"> 
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle shadow-1-strong" width="150" height="150" alt="" aria-controls="#picker-editor"> 
+    <!-- Section 4 -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-aos="zoom-in-up" data-aos-duration="1500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <section draggable="false" class="container pt-5" data-v-271253ee="">
+        <section class="mb-10 text-center"> 
+          <div class="row d-flex justify-content-center"> 
+            <div class="col-md-10 col-xl-8"> 
+              <h2 class="fw-bold mb-5">Temoignages</h2> 
             </div> 
-            <h5 class="mb-3">Maria Smantha</h5>
-            <p class="px-xl-3"> 
-              <i class="fas fa-quote-left pe-2"></i>
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</span> 
-              <i class="fas fa-quote-right pe-2"></i>
-            </p> 
-            <ul class="list-unstyled d-flex justify-content-center mb-0"> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star-half-alt fa-sm text-warning"></i> 
-              </li> 
-            </ul> 
           </div> 
-          <div class="col-md-4 mb-5 mb-md-0"> 
-            <div class="d-flex justify-content-center mb-4"> 
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg" class="rounded-circle shadow-1-strong" width="150" height="150" alt="" aria-controls="#picker-editor"> 
-            </div> 
-            <h5 class="mb-3">Lisa Cudrow</h5>
-            <p class="px-xl-3"> 
-              <i class="fas fa-quote-left pe-2"></i>
-              <span>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.</span>
-              <i class="fas fa-quote-right pe-2"></i>
-            </p> 
-            <ul class="list-unstyled d-flex justify-content-center mb-0"> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
-            </ul> 
-          </div> 
-          <div class="col-md-4 mb-0"> 
-            <div class="d-flex justify-content-center mb-4"> 
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" class="rounded-circle shadow-1-strong" width="150" height="150" alt="" aria-controls="#picker-editor"> 
-            </div> 
-            <h5 class="mb-3">John Smith</h5>
-            <p class="px-xl-3"> 
-              <i class="fas fa-quote-left pe-2"></i>
-              <span>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</span>
-              <i class="fas fa-quote-right pe-2"></i>
-            </p> 
-            <ul class="list-unstyled d-flex justify-content-center mb-0"> 
-              <li> <i class="fas fa-star fa-sm text-warning"></i> 
-              </li> <li> <i class="fas fa-star fa-sm text-warning"></i> 
-              </li> <li> <i class="fas fa-star fa-sm text-warning"></i> 
-              </li> <li> <i class="fas fa-star fa-sm text-warning"></i> 
-              </li> <li> <i class="far fa-star fa-sm text-warning"></i> 
-              </li> 
-            </ul> 
-          </div> 
-        </div> 
-      </section>
-    </section>
-    <!---->
-  </div>
-  </div>
-  <!-- Fin section 4 -->
+          <div class="row">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <div class="col-md-12 mb-5 mb-md-0"> 
+                  <div class="d-flex justify-content-center mb-4"> 
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle shadow-1-strong" width="150" height="150" alt="" aria-controls="#picker-editor"> 
+                  </div> 
+                  <h5 class="mb-3">Maria Smantha</h5>
+                  <p class="px-xl-3"> 
+                    <i class="fas fa-quote-left pe-2"></i>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</span> 
+                    <i class="fas fa-quote-right pe-2"></i>
+                  </p> 
+                  <ul class="list-unstyled d-flex justify-content-center mb-0"> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star-half-alt fa-sm text-warning"></i> 
+                    </li> 
+                  </ul> 
+                </div> 
+              </div>
+              
+              <div class="carousel-item">
+                <div class="col-md-12 mb-5 mb-md-0"> 
+                  <div class="d-flex justify-content-center mb-4"> 
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg" class="rounded-circle shadow-1-strong" width="150" height="150" alt="" aria-controls="#picker-editor"> 
+                  </div> 
+                  <h5 class="mb-3">Lisa Cudrow</h5>
+                  <p class="px-xl-3"> 
+                    <i class="fas fa-quote-left pe-2"></i>
+                    <span>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.</span>
+                    <i class="fas fa-quote-right pe-2"></i>
+                  </p> 
+                  <ul class="list-unstyled d-flex justify-content-center mb-0"> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> </li> 
+                  </ul> 
+                </div>  
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-12 mb-0"> 
+                  <div class="d-flex justify-content-center mb-4"> 
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" class="rounded-circle shadow-1-strong" width="150" height="150" alt="" aria-controls="#picker-editor"> 
+                  </div> 
+                  <h5 class="mb-3">John Smith</h5>
+                  <p class="px-xl-3"> 
+                    <i class="fas fa-quote-left pe-2"></i>
+                    <span>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</span>
+                    <i class="fas fa-quote-right pe-2"></i>
+                  </p> 
+                  <ul class="list-unstyled d-flex justify-content-center mb-0"> 
+                    <li> <i class="fas fa-star fa-sm text-warning"></i> 
+                    </li> <li> <i class="fas fa-star fa-sm text-warning"></i> 
+                    </li> <li> <i class="fas fa-star fa-sm text-warning"></i> 
+                    </li> <li> <i class="fas fa-star fa-sm text-warning"></i> 
+                    </li> <li> <i class="far fa-star fa-sm text-warning"></i> 
+                    </li> 
+                  </ul> 
+                </div> 
+              </div>
+            </div>
+          
+          </div>  
+          </section>
+        </section>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Fin section 4 -->
 
   <!-- Section 5 -->
   <!-- Contact -->
@@ -649,7 +659,7 @@
         </div>
 
         <div class="col-lg-6 order-1 mb-4 order-lg-1 mb-lg-0 d-flex justify-content-center mt-lg-0 mt-sm-5">
-          <img src="images/logo.jpg" alt="" class="img-fluid w-75 rounded-circle">
+          <img src="images/logo.jpg" alt="" class="img-fluid w-50  h-50 rounded-circle pt-lg-0 pt-3">
         </div>
       </div>
     </div>
@@ -657,7 +667,6 @@
   
   </div>
   <!-- Fin section 5 -->
-
    <!-- footer -->
    <footer>
     <!-- Footer section -->
@@ -665,11 +674,59 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-4 col-md-6 text-center text-md-start">
-            <div class="footer-logo mb-3 mb-md-0">
+            <div class="footer-logo mb-3 mb-md-0 d-flex flex-column">
               <img src="images/logo.jpg" alt="logo" class="img-fluid rounded-circle">
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
+            
+          </div>
+          <div class="col-lg-4 col-md-12">
+            
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 my-4 text-light">
+            <h6>CONTACT INFO</h6>
+            <br>
+            <span class="d-flex text-light">
+              <i class="fa-solid fa-house me-3 mt-1"></i>
+              <p>890 Lorem ipsum Street 81.
+                Dakar, Senegal <br>
+              </p>
+            </span>
+
+            <span class="d-flex text-light">
+              <i class="fa-duotone fa-at me-3 mt-"></i>
+              <p>Online-Shop@gmail.com</p>
+            </span>
+
+            <span class="d-flex text-light">
+              <i class="fa-solid fa-phone me-3 mt-1"></i>
+              <p>+221 12 345 67 89</p>
+            </span>
+            
+            <span class="d-flex text-light">
+              <i class="fa-solid fa-envelope me-3 mt-1"></i>
+              <p>11999</p>
+            </span>
+          </div>
+
+          <div class="col-md-5 my-3">
+            <form action="" class="text-light">
+              <p>Inscrivez-vous à nos communications pour recevoir nos meilleures offres!</p>
+              <div class="my-2">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">M'inscrire a la Newslatter</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-4 my-3">
+            
             <ul class="list-unstyled d-flex justify-content-center justify-content-md-end justify-content-lg-center social-icon mb-3 mb-md-0">
               <li>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -685,9 +742,12 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-4 col-md-12">
-            <div class="copyright-text text-lg-start text-center mb-3 mb-lg-0">
-              <p class="mb-0 text-white">Copyright <i class="fa-solid fa-copyright"></i> 2023 <a href="#">Cheikh Gueye</a>. All Right Reserved.</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright-text text-center text-center mb-3 mb-lg-0">
+              <p class="mb-0 text-white text-u">Copyright <i class="fa-solid fa-copyright"></i> 2023 <a href="#">Cheikh Gueye</a>. All Right Reserved.</p>
             </div>
           </div>
         </div>
@@ -695,5 +755,9 @@
     </section>
     <!-- Footer section exit -->
    </footer>
+
+   <script>
+    AOS.init();
+  </script>
 </body>
 </html
