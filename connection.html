@@ -37,46 +37,64 @@
     <!-- -------------------------- Liens JS & CSS ---------------------------- -->
     <link rel="stylesheet" href="connection-inscription.css">
 </head>
-<body class="background-radial-gradient">
+<body class="">
   <!-- Navbar -->  
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
         <img src="images/logo.jpg" alt="LogoA" class="rounded-circle img-fluid m-0 p-0" />
         <span class="h6 mt-auto mb-auto ms-md-2">Online Shop</span>     
       </a>
 
-      <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+      <!-- toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas"><img src="images/menu.gif" class="img-fluid" alt=""></i>
       </button>
 
-          
-      <div class="collapse navbar-collapse justify-content-end" id="navbarButtonsExample">
-        <!-- Left links -->
-        
-        <!-- search -->
-            
-        <div class="d-md-flex wrap">
-          
+      <!-- links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a href="#section1">
+              <div class="dropdown mx-1">
+                <a class="main-btn btn nav-links" href="index.html">Accueils</a>
+              </div>
+            </a>
+  
+            <div class="dropdown mx-1">
+              <a class="btn dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produits</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item btn text-dark nav-links" href="index.html">Types de produit</a></li>
+                  <li><a class="dropdown-item btn text-dark nav-links" href="index.html">Produits les plus acheter</a></li>
+                </ul>
+            </div>
+  
+            <div class="dropdown mx-1">
+              <a class="main-btn btn nav-links" href="index.html">Contact </a>
+            </div>
+          </ul>
+          <div class="d-md-flex search">
+            <div class="input-group mb-3 mb-lg-0 mx-lg-3 mx-0">
+              <input type="text" class="form-control" placeholder="Rechercher" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+          </div>
+          </div>
           <a href="connection.html" class="text-dark">
-            <button type="button" class="button1 btn px-3 me-2">Connection</button>
+            <button type="button" class=" button1 btn px-3 me-2 Conn">Connection</button>
           </a>
           <a href="inscription.html" class="text-dark">
             <button type="button" class="button1 btn btn btn-background px-3 me-2 text-light">Inscription</button>
           </a>
 
-          <a class="shop btn btn-dark px-2" href="#" role="button">
+          <a class="shop btn btn-dark px-2" data-bs-toggle="modal" data-bs-target="#myModal-h" href="#" role="button">
             <img src="images/panier.gif" class="img-fluid rounded-circle pt-auto pb-auto">
           </a>
-        </div>
       </div>
     </div>
   </nav>
   <!-- Fin Navbar -->
 
   <!-- Inscription -->
-  <section class="background-radial-gradient overflow-hidden my-5">
+  <section class="background-radial-gradient overflow-hidden py-5">
     <div class="container px-4 px-md-5 text-center text-lg-start my-5">
       <div class="row gx-lg-5 align-items-center mb-5">
         <div class="col-lg-6 col-sm-12 mb-5 mb-lg-0" style="z-index: 10">

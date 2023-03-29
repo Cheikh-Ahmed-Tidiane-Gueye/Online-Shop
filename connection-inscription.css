@@ -92,3 +92,15 @@ a:hover{
     width: 20px;
     height: 20px;
 }
+img[alt="gif"]{
+    width: 20px;
+    height: 20px;
+}
+.fas img{
+    width: 30px;
+    height: 30px;
+}
+
+.nav-links:checked .offcanvas{
+    display: none;
+}
